@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header></Header>
+    <!-------------------------------------- Esto seria los rol --------------------------------------->
+    <!-- <Header></Header>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -13,6 +14,99 @@
 
         </div>
       </div>
+    </div> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-4 gris">
+              <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
+                  <button class="btn btn-primary" style="width: 215px; height: 85px">Agregar</button>
+              </div>
+            </div>
+            <div class="col-4 rojo d-flex align-items-center justify-content-center">
+              <div style="text-align: center;">
+                <p style="margin: 5px 0;"><strong>DATOS DE CLIENTE</strong></p>
+                <p style="margin: 5px 0;">NOMBRE: Andrea Cedeño</p>
+                <p style="margin: 5px 0;">CEDULA: 283179652</p>
+                <p style="margin: 5px 0;">TELF: 04141060970</p>
+                <p style="margin: 5px 0;">DIRECCION: Caracas</p>
+              </div>
+            </div>
+            <div class="col-4 azul d-flex align-items-center justify-content-center" style="border: 2px solid black;">
+              <div style="text-align: center;">
+                <p style="margin: 5px 0;"><strong>PUNTOS CLIENTE</strong></p>
+                <p style="margin: 5px 0;">22</p>
+                <p style="margin: 5px 0;"><strong>TOTAL</strong></p>
+                <p style="margin: 5px 0;">1200 BS</p>
+                <p style="margin: 5px 0;">33$</p>
+              </div>
+            </div>
+        </div>
+        <div class="tabla-con-scroll">
+          <table  class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Encabezado 1</th>
+                    <th>Encabezado 2</th>
+                    <th>Encabezado 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                    <td>Dato 3</td>
+                </tr>
+                <tr>
+                    <td>Dato 4</td>
+                    <td>Dato 5</td>
+                    <td>Dato 6</td>
+                </tr>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                    <td>Dato 3</td>
+                </tr>
+                <tr>
+                    <td>Dato 4</td>
+                    <td>Dato 5</td>
+                    <td>Dato 6</td>
+                </tr>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                    <td>Dato 3</td>
+                </tr>
+                <tr>
+                    <td>Dato 4</td>
+                    <td>Dato 5</td>
+                    <td>Dato 6</td>
+                </tr>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                    <td>Dato 3</td>
+                </tr>
+                <tr>
+                    <td>Dato 4</td>
+                    <td>Dato 5</td>
+                    <td>Dato 6</td>
+                </tr>
+                <tr>
+                    <td>Dato 19</td>
+                    <td>Dato 29</td>
+                    <td>Dato 39</td>
+                </tr>
+                <tr>
+                    <td>Dato 49</td>
+                    <td>Datogfffff 59</td>
+                    <td>Dato 69</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class=" col-12 azul-inferior"></div>
+        </div>
     </div>
   </div>
 </template>
@@ -119,120 +213,42 @@
 
 <style>
 
+ /******************** Estos son los estilos de tienda física ***********************************/
+.gris {
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  height: 25vh;
 }
 
-.boton{
-  margin: 10px;
-}
-.lbl_switch{
-  display: inline-block;
-  width: 55px;
-  height: 30px;
-  background: #aaa;
-  border-radius: 100px;
-  position: relative;
-  cursor: pointer;
+
+.rojo {
+
+  height: 25vh;
 }
 
-#btn_switch:checked~ .lbl_switch{
-  background: #61A0FF;
+
+.azul {
+
+  height: 25vh;
 }
 
-.lbl_switch:after{
+.azul-inferior {
+  background-color: #00f;
+  height: 25vh;
   position: absolute;
-  content: '';
-  width: 22px;
-  height: 22px;
-  background-color: #fff;
-  border-radius: 100px;
-  top: 4px;
-  left: 5px;
-  transition: 0.3s;
+  bottom: 0;
+  width: 88%;
 }
 
-#btn_switch:checked~ .lbl_switch:after{
-  left: 28px;
+.tabla-con-scroll {
+  max-height: 49vh;
+  overflow-y: auto;
 }
 
-#btn_switch{
-  display: none;
-}
-
-.toggle-button {
-
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: #ccc;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.toggle-button.active {
-
-  background-color: #007bff;
-  color: #fff;
-  transform: translateX(10px);
-}
-
-.checkbox-group {
-  margin-bottom: 20px;
-}
-
-.checkbox-label {
-  display: block;
-  margin-bottom: 5px;
+.tabla-con-scroll thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
 }
 
 
-.checkbox-label span {
-  font-weight: bold;
-}
-
-
-.custom-card {
-  margin-top: 15px;
-  background: linear-gradient(to bottom, #FFD700, #FFA500);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  min-height: 200px;
-}
-
-
-.custom-button {
-  margin-top: 20px;
-  background-color: #FF4500;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
-  align-self: center;
-
-}
-
-.custom-buttom:hover .custom-button {
-  transform: scale(1.2);
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 35px;
-  color: white;
-}
-
-.item-text {
-  margin-bottom: 10px;
-}
 </style>
