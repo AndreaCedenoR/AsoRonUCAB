@@ -4,13 +4,18 @@
     <Header></Header>
     <div class="container">
       <div class="row">
-
-
+        <div class="col-md-4 d-flex" style="margin-top:50px">
+          <input type="text" id="rolNombre" class="flex-grow-1 form-control" v-model="nombreDelRol" placeholder="Nombre del Rol">
+          <button class="btn btn-primary " @click="registrarRol" style="width:135px; height: 30px; margin-left:50px">Registrar</button>
+        </div>
+        <div class="col-md-12 text-center mt-3">
+          <p>Permisos Asociados</p>
+        </div>
           <div v-for="(item, index) in arrayCheckBox" :key="index" class="col-md-3 form-check form-switch">
             <input type="checkbox" class="form-check-input" v-model="item.selected">
             <label class="form-check-label">{{ item.text }}</label>
           </div>
-          <button class="btn btn-primary" @click="obtenerEstadoCasillas">Obtener Estado</button>
+          <!-- <button class="btn btn-primary" @click="obtenerEstadoCasillas">Obtener Estado</button> -->
 
 
       </div>
