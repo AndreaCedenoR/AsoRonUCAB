@@ -1,22 +1,22 @@
 <template>
   <div>
     <!-------------------------------------- Esto seria los rol --------------------------------------->
-    <!-- <Header></Header>
+    <Header></Header>
     <div class="container">
       <div class="row">
-        <div class="col">
 
-          <div v-for="(item, index) in arrayCheckBox" :key="index" class="form-check form-switch">
+
+          <div v-for="(item, index) in arrayCheckBox" :key="index" class="col-md-3 form-check form-switch">
             <input type="checkbox" class="form-check-input" v-model="item.selected">
             <label class="form-check-label">{{ item.text }}</label>
           </div>
           <button class="btn btn-primary" @click="obtenerEstadoCasillas">Obtener Estado</button>
 
-        </div>
+
       </div>
-    </div> -->
+    </div>
     <!-------------------------------------- Esto seria Tienda física --------------------------------------->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row" style="border-bottom: 2px solid black;">
             <div class="col-4 espace">
               <div class="espace" style="height: 100%;">
@@ -33,12 +33,14 @@
               </div>
             </div>
             <div class="col-4 espace" style="border: 2px solid black;">
-              <div style="text-align: center;">
-                <p style="margin: 5px 0; font-size: 25px;"><strong>PUNTOS CLIENTE</strong></p>
-                <p style="margin: 5px 0;">22</p>
-                <p style="margin: 5px 0; font-size: 25px;"><strong>TOTAL</strong></p>
-                <p style="margin: 5px 0;">1200 BS</p>
-                <p style="margin: 5px 0;">33$</p>
+
+                <div class="centered-div">
+                  <p><strong>PUNTOS CLIENTE</strong></p>
+                  <p>22</p>
+                  <p><strong class="total">TOTAL</strong></p>
+                  <p>1200 BS</p>
+                  <p>33$</p>
+
               </div>
             </div>
         </div>
@@ -107,11 +109,25 @@
         </div>
         <div class="row">
           <div class="col-12 azul-inferior">
-            <button class="boton-canjear btn btn-primary">Canjear</button>
+            <button class="boton-canjear btn btn-primary" @click="modalCanjear">Canjear</button>
             <button class="boton-pagar btn btn-primary">Pagar</button>
           </div>
+          <div v-if="modalVisible" class="modal">
+            <div class="modal-content">
+              <span class="close" @click="closeModal">&times;</span>
+              <div class="modal-inner-content">
+                <p class="modal-title total">Puntos disponibles</p>
+                <p class="modal-number centered-div">13</p>
+                <input type="text" class="modal-input" placeholder="Ingrese un valor" />
+                <div class="modal-buttons">
+                  <button class="btn btn-primary btn_position" >Canjear</button>
+                  <button class="btn btn-primary btn_position" style="margin-left:30px"  @click="closeModal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -126,6 +142,7 @@
   },
   data(){
     return {
+        modalVisible: false,
         arrayCheckBox :[
         {value: 'Crear_producto', text: 'Crear producto', selected: false},
         {value: 'Editar_producto', text: 'Editar producto', selected: false},
@@ -153,6 +170,13 @@
   },
 
   methods: {
+    modalCanjear() {
+      this.modalVisible = true;
+      console.log('funciona el click')
+    },
+    closeModal() {
+      this.modalVisible = false;
+    },
     obtenerEstadoCasillas() {
     const a = []
     this.arrayCheckBox.forEach((item, index) => {
@@ -271,6 +295,68 @@
   justify-content: flex-end;
   align-items: center;
   height: 100%;
+}
+
+.centered-div {
+  text-align: center;
+}
+
+.centered-div p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.centered-div p strong {
+  font-weight: bold;
+}
+
+.total {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+/********************************** Estilo para el modal ***********************************/
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 35%;
+}
+
+/* Estilo para el botón de cerrar el modal */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal-input{
+
+}
+
+.btn_position{
+  width: 135px;
+  height: 50px;
 }
 
 </style>
