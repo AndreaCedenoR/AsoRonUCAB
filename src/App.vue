@@ -15,27 +15,28 @@
         </div>
       </div>
     </div> -->
+    <!-------------------------------------- Esto seria Tienda física --------------------------------------->
     <div class="container">
-        <div class="row">
-            <div class="col-4 gris">
-              <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
-                  <button class="btn btn-primary" style="width: 215px; height: 85px">Agregar</button>
+        <div class="row" style="border-bottom: 2px solid black;">
+            <div class="col-4 espace">
+              <div class="espace" style="height: 100%;">
+                  <button class="btn btn-primary" style="width: 185px; height: 65px">Agregar</button>
               </div>
             </div>
-            <div class="col-4 rojo d-flex align-items-center justify-content-center">
+            <div class="col-4 espace">
               <div style="text-align: center;">
-                <p style="margin: 5px 0;"><strong>DATOS DE CLIENTE</strong></p>
+                <p style="margin: 5px 0; font-size: 25px;"><strong>DATOS DE CLIENTE</strong></p>
                 <p style="margin: 5px 0;">NOMBRE: Andrea Cedeño</p>
                 <p style="margin: 5px 0;">CEDULA: 283179652</p>
                 <p style="margin: 5px 0;">TELF: 04141060970</p>
                 <p style="margin: 5px 0;">DIRECCION: Caracas</p>
               </div>
             </div>
-            <div class="col-4 azul d-flex align-items-center justify-content-center" style="border: 2px solid black;">
+            <div class="col-4 espace" style="border: 2px solid black;">
               <div style="text-align: center;">
-                <p style="margin: 5px 0;"><strong>PUNTOS CLIENTE</strong></p>
+                <p style="margin: 5px 0; font-size: 25px;"><strong>PUNTOS CLIENTE</strong></p>
                 <p style="margin: 5px 0;">22</p>
-                <p style="margin: 5px 0;"><strong>TOTAL</strong></p>
+                <p style="margin: 5px 0; font-size: 25px;"><strong>TOTAL</strong></p>
                 <p style="margin: 5px 0;">1200 BS</p>
                 <p style="margin: 5px 0;">33$</p>
               </div>
@@ -43,7 +44,7 @@
         </div>
         <div class="tabla-con-scroll">
           <table  class="table mt-4">
-            <thead>
+            <thead style="border-bottom: 2px solid black;">
                 <tr>
                     <th>Encabezado 1</th>
                     <th>Encabezado 2</th>
@@ -105,7 +106,10 @@
           </table>
         </div>
         <div class="row">
-          <div class=" col-12 azul-inferior"></div>
+          <div class="col-12 azul-inferior">
+            <button class="boton-canjear btn btn-primary">Canjear</button>
+            <button class="boton-pagar btn btn-primary">Pagar</button>
+          </div>
         </div>
     </div>
   </div>
@@ -214,30 +218,13 @@
 <style>
 
  /******************** Estos son los estilos de tienda física ***********************************/
-.gris {
-
+.espace{
   height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.rojo {
-
-  height: 25vh;
-}
-
-
-.azul {
-
-  height: 25vh;
-}
-
-.azul-inferior {
-  background-color: #00f;
-  height: 25vh;
-  position: absolute;
-  bottom: 0;
-  width: 88%;
-}
 
 .tabla-con-scroll {
   max-height: 49vh;
@@ -250,5 +237,40 @@
     background-color: #fff;
 }
 
+.azul-inferior {
+  height: 25vh;
+  position: relative;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.boton-canjear,
+.boton-pagar {
+  position: absolute;
+}
+
+.boton-canjear {
+  right: 45px;
+  width: 150px;
+  height: 60px;
+  margin-right: 150px;
+}
+
+.boton-pagar {
+  right: 15px;
+  width: 150px;
+  height: 60px;
+
+}
+
+.botones-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
 
 </style>
